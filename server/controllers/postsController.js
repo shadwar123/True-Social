@@ -32,7 +32,7 @@ const createPostController = async (req, res) => {
         await user.save();
 
         console.log("user", user);
-        console.log("post", post);
+        console.log("post", postImg);
 
         return res.json(success(200, { post }));
     } catch (e) {

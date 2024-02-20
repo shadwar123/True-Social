@@ -31,6 +31,15 @@
                 aspect-ratio: 16 / 9;
             }
         }
+        .green-icon {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .orange-icon {
+            color: orange;
+            font-weight: bold;
+        }
         .labelImg {
             display: inline-block;
             background-color: var(--accent-color);
