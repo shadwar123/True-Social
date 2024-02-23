@@ -14,6 +14,19 @@ const postSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    apiResponse:  {
+        type: {
+            prediction: {
+                type: Number,
+                required: true
+            },
+            result: {
+                type: String,
+                required: true
+            }
+        },
+        required: true
+    },
     likes: [
         {
             type: mongoose.Schema.Types.ObjectId,

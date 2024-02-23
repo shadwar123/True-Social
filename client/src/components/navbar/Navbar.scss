@@ -12,6 +12,13 @@
         align-items: center;
         justify-content: space-between;
     }
+    .banner{
+        font-weight: bold;
+        font-size: larger;
+        font-stretch: expanded;
+        z-index: 1000;
+        
+    }
 
     .right-side {
         display: flex;

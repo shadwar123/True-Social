@@ -6,7 +6,7 @@ const {mapPostOutput} = require('../utils/Utils')
 
 const createPostController = async (req, res) => {
     try {
-        const { caption, postImg } = req.body;
+        const { caption, postImg, apiResponse } = req.body;
 
         if(!caption || !postImg) {
             return res.send(error(400, 'Caption and postImg are required'))
@@ -22,6 +22,7 @@ const createPostController = async (req, res) => {
         const post = await Post.create({
             owner,
             caption,
+            apiResponse,
             image: {
                 publicId: cloudImg.public_id,
                 url: cloudImg.url

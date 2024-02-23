@@ -4,6 +4,7 @@ const mapPostOutput = (post, userId) => {
     return {
         _id: post._id,
         caption: post.caption,
+        apiResponse:post.apiResponse,
         image: post.image,
         owner: {
             _id: post.owner._id,

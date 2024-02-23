@@ -42,5 +42,33 @@
             margin-top: 12px;
             color: #aaa;
         }
+        .green-icon {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .orange-icon {
+            color: orange;
+            font-weight: bold;
+        }
+        .red-icon{
+            color: red;
+            font-weight: bold;
+        }
+        .caption-prediction-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .prediction-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .large-icon {
+            font-size: 40px; /* adjust the size as needed */
+        }
+        
     }
 }

@@ -1,8 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   margin: 0;
@@ -41,7 +46,7 @@ p {
 }
 
 .hover-link:active {
-  color: red;
+  color: rgb(81, 96, 168);
 }
 
 .container {
@@ -84,3 +89,4 @@ p {
 .btn-secondary:active {
   background: none;
 }
+

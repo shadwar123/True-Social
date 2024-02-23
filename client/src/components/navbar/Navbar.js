@@ -27,9 +27,9 @@ function Navbar() {
     return (
         <div className="Navbar">
             <div className="container">
-                <h2 className="banner hover-link" onClick={() => navigate("/")}>
+                <h1 className="banner hover-link" onClick={() => navigate("/")}>
                     Social Media
-                </h2>
+                </h1>
                 <div className="right-side">
                     <div
                         className="profile hover-link"

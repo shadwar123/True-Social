@@ -33,7 +33,7 @@ function CreatePost() {
         const { data } = await worker.recognize(selectedImage);
 
         setTextResult(data.text);
-        const alphabeticText = data.text.match(/[a-zA-Z]+/g); // Using regex to match alphabetic characters
+        const alphabeticText = data.text.match(/[a-zA-Z]+/g); 
 
         const resultString = alphabeticText.join(' ');
         console.log('imageinfo', resultString)
@@ -55,7 +55,7 @@ function CreatePost() {
             fileReader.onload = () => {
                 if (fileReader.readyState === fileReader.DONE) {
                     setPostImg(fileReader.result);
-                    console.log("img data", fileReader.result);
+                    // console.log("img data", fileReader.result);
                 }
             };
         } else {
@@ -91,7 +91,9 @@ function CreatePost() {
     const hanldePostSubmit = async () => {
         try {
             const result = await axiosClient.post('/posts', {
+
                 caption,
+                apiResponse,
                 postImg
             });
             console.log('post done', result);
@@ -103,6 +105,7 @@ function CreatePost() {
         } finally {
             setCaption('');
             setPostImg('');
+            setApiResponse({ prediction: 0, result: '' });
         }
 
 

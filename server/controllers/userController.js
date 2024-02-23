@@ -204,9 +204,11 @@ const getUserProfile = async (req, res) => {
         });
 
         const fullPosts = user.posts;
+        console.log("userProfileInfo1",user.posts)
         const posts = fullPosts
             .map((item) => mapPostOutput(item, req._id))
             .reverse();
+        console.log("userProfileInfo2",posts)
 
         return res.send(success(200, { ...user._doc, posts }));
     } catch (e) {
