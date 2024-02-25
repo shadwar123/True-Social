@@ -41,13 +41,9 @@ Implementation of stringent privacy measures, including JWT and double authentic
  5. React
  6. MongoDb
  
-# Model Architecture
+# Model Architecture using Sequential
  1. Embedding Layer
  2. LSTM Layer
  3. Dense Layer
  
-# Block Diagram
-  ![diagram-export-11-5-2023-10_19_08-AM](https://github.com/)
-
-# Presentation[
 
