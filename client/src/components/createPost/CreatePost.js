@@ -65,10 +65,11 @@ function CreatePost() {
         }
 
     };
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     const handlePredict = async (e) => {
         try {
-            const response = await fetch('http://127.0.0.1:5000/fake_news_prediction', {
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

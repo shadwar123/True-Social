@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 module.exports = async () => {
     const mongoUri =
-        "mongodb+srv://shadwar123:TxiJTYE00WXysSZ9@cluster0.yz6yzdu.mongodb.net/";
+        process.env.MONGODB_URL;
 
     try {
         mongoose.set('strictQuery', false);
