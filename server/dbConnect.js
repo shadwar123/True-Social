@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports = async () => {
     const mongoUri =
-        "mongodb+srv://shadwar123:TxiJTYE00WXysSZ9@cluster0.yz6yzdu.mongodb.net/";
+        MongoDb_Url;
 
     try {
         mongoose.set('strictQuery', false);

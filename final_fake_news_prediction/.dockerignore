@@ -1,0 +1,11 @@
+Dockerfile
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+news_model.py
+.venv
+.idea
+api_implimentation.py
+
+

@@ -54,6 +54,7 @@ function App() {
                             path="/updateProfile"
                             element={<UpdateProfile />}
                         />
+                        
                     </Route>
                 </Route>
                 <Route element={<OnlyIfNotLoggedIn />}>

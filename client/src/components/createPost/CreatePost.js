@@ -68,7 +68,7 @@ function CreatePost() {
 
     const handlePredict = async (e) => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/fake_news_prediction', {
+            const response = await fetch('http://127.0.0.1:5000/fake_news_prediction', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
