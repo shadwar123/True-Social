@@ -46,4 +46,6 @@ Implementation of stringent privacy measures, including JWT and double authentic
  2. LSTM Layer
  3. Dense Layer
  
+# Demo Video
+[![YouTube Video](http://img.youtube.com/vi/YXKd3-P7Oo4/0.jpg)](https://www.youtube.com/watch?v=YXKd3-P7Oo4 "Amazing YouTube Video")
 
