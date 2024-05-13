@@ -25,7 +25,7 @@ const app = express();
 app.use(express.json({ limit: "10mb" }));
 app.use(morgan("common"));
 app.use(cookieParser());
-let origin = 'https://true-social-frontend.vercel.app/#/login';
+let origin = 'https://true-social-frontend.vercel.app';
 console.log('here env', process.env.NODE_ENV);
 if(process.env.NODE_ENV === 'production') {
     origin = process.env.CLIENT_ORIGIN;
@@ -34,9 +34,10 @@ app.use(
     cors({
         credentials: true,
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        origin
+        origin: process.env.NODE_ENV === 'production' ? '*' : 'https://true-social-frontend.vercel.app',
     })
 );
+
 
 app.use("/auth", authRouter);
 app.use("/posts", postsRouter);
