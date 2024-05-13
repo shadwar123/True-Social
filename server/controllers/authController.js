@@ -130,10 +130,11 @@ const generateAccessToken = (data) => {
 
 const generateRefreshToken = (data) => {
     try {
+        console.log('refreshtoken 1',token);
         const token = jwt.sign(data, 'e91db63d5eb386f45e8711e0d37b2c248e5685d1a86ccaa00a377c39ee2c140fde900783dbe3c502674d256a14e9bd4d54816b4a099f99d5026a67493f5d3092', {
             expiresIn: "1y",
         });
-        console.log(token);
+        console.log('refreshtoken 2',token);
         return token;
     } catch (error) {
         console.log(error);
