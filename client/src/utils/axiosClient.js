@@ -12,12 +12,12 @@ import { TOAST_FAILURE } from "../App";
 let baseURL = 'https://true-social.vercel.app/';
 console.log('env is ', process.env.NODE_ENV);
 if(process.env.NODE_ENV === 'production') {
-    baseURL = process.env.REACT_APP_SERVER_BASE_URL
+    baseURL = 'https://true-social.vercel.app/'
 }
 
 export const axiosClient = axios.create({
     baseURL,
-    withCredentials: true,
+    withCredentials: true
 });
 
 axiosClient.interceptors.request.use((request) => {
