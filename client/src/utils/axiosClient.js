@@ -52,7 +52,7 @@ axiosClient.interceptors.response.use(async (respone) => {
             .create({
                 withCredentials: true,
             })
-            .get(`${baseURL}/auth/refresh`);
+            .get(`${baseURL}auth/refresh`);
 
         if (response.data.status === "ok") {
             setItem(KEY_ACCESS_TOKEN, response.data.result.accessToken);
@@ -62,9 +62,9 @@ axiosClient.interceptors.response.use(async (respone) => {
 
             return axios(originalRequest);
         } else {
-            removeItem(KEY_ACCESS_TOKEN);
-            window.location.replace("/login", "_self");
-            return Promise.reject(error);
+            // removeItem(KEY_ACCESS_TOKEN);
+            // window.location.replace("/login", "_self");
+            // return Promise.reject(error);
         }
     }
     return Promise.reject(error);
