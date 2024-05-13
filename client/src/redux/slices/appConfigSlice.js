@@ -7,7 +7,7 @@ export const getMyInfo = createAsyncThunk(
         try {
             const response = await axiosClient.get("/user/getMyInfo");
             console.log('getting info 1')
-            return response;
+            return response.result;
         } catch (error) {
             return Promise.reject(error);
         }

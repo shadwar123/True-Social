@@ -62,7 +62,7 @@ const loginController = async (req, res) => {
             _id: user._id,
         });
 
-        res.cookie("jwt", refreshToken, {
+        res.cookie("jwt", accessToken, {
             httpOnly: true,
             secure: true,
         });
@@ -88,7 +88,7 @@ const refreshAccessTokenController = async (req, res) => {
     try {
         const decoded = jwt.verify(
             refreshToken,
-            process.env.REFRESH_TOKEN_PRIVATE_KEY
+            process.env.ACCESS_TOKEN_PRIVATE_KEY
         );
 
         const _id = decoded._id;
