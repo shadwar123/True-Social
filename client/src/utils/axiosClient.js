@@ -9,7 +9,7 @@ import store from '../redux/store';
 import { setLoading, showToast } from "../redux/slices/appConfigSlice";
 import { TOAST_FAILURE } from "../App";
 
-let baseURL = 'true-social.vercel.app/';
+let baseURL = 'https://true-social.vercel.app/';
 console.log('env is ', process.env.NODE_ENV);
 if(process.env.NODE_ENV === 'production') {
     baseURL = process.env.REACT_APP_SERVER_BASE_URL
