@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = async () => {
     const mongoUri =
-        process.env.MONGODB_URL;
+        "mongodb+srv://shadwar123:TxiJTYE00WXysSZ9@cluster0.yz6yzdu.mongodb.net/";
 
     try {
         mongoose.set('strictQuery', false);
