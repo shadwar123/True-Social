@@ -52,7 +52,7 @@ axiosClient.interceptors.response.use(async (respone) => {
             .create({
                 withCredentials: true,
             })
-            .get(`${baseURL}/auth/refresh`);
+            .get(`${baseURL}auth/refresh`);
 
         if (response.data.status === "ok") {
             setItem(KEY_ACCESS_TOKEN, response.data.result.accessToken);
