@@ -38,13 +38,14 @@ app.use(cookieParser());
 //     })
 // );
 let origin = 'http://localhost:3000';
-app.use(
-    cors({
-        credentials: true,
-        methods:['*'],
-        origin
-    })
-);
+// app.use(
+//     cors({
+//         credentials: true,
+//         methods:['*'],
+//         origin
+//     })
+// );
+app.use(cors());
 
 
 app.use("/auth", authRouter);
