@@ -37,7 +37,7 @@ app.use(cookieParser());
 //         origin: 'https://true-social-frontend.vercel.app',
 //     })
 // );
-let origin = 'http://localhost:3000';
+// let origin = 'http://localhost:3000';
 // app.use(
 //     cors({
 //         credentials: true,
@@ -45,7 +45,15 @@ let origin = 'http://localhost:3000';
 //         origin
 //     })
 // );
-app.use(cors());
+const corsOptions = {
+    origin: 'https://true-social-frontend.onrender.com', // Your frontend URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Allow cookies to be sent with requests
+    optionsSuccessStatus: 204
+  };
+  
+  app.use(cors(corsOptions));
+
 
 
 app.use("/auth", authRouter);
