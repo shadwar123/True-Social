@@ -30,11 +30,19 @@ app.use(cookieParser());
 // if(process.env.NODE_ENV === 'production') {
 //     origin = process.env.CLIENT_ORIGIN;
 // }
+// app.use(
+//     cors({
+//         credentials: true,
+//         methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
+//         origin: 'https://true-social-frontend.vercel.app',
+//     })
+// );
+let origin = 'http://localhost:3000';
 app.use(
     cors({
         credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
-        origin: 'https://true-social-frontend.vercel.app',
+        methods:['*'],
+        origin
     })
 );
 

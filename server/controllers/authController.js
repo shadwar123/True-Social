@@ -62,7 +62,7 @@ const loginController = async (req, res) => {
             _id: user._id,
         });
 
-        res.cookie("jwt", accessToken, {
+        res.cookie("jwt", refreshToken, {
             httpOnly: true,
             secure: true,
         });
@@ -88,7 +88,7 @@ const refreshAccessTokenController = async (req, res) => {
     try {
         const decoded = jwt.verify(
             refreshToken,
-            process.env.ACCESS_TOKEN_PRIVATE_KEY
+            process.env.REFRESH_TOKEN_PRIVATE_KEY
         );
 
         const _id = decoded._id;
@@ -116,9 +116,8 @@ const logoutController = async (req, res) => {
 
 //internal functions
 const generateAccessToken = (data) => {
-    console.log('access token generated')
     try {
-        const token = jwt.sign(data, 'e88f27478505704c9ea33bf34f8f55de30e875b015a1b92925862b7af6f5a6513069a2a48c144d3983502fed987c5ad622cae3f1b8e89e201b79361b9f156b55', {
+        const token = jwt.sign(data, process.env.ACCESS_TOKEN_PRIVATE_KEY, {
             expiresIn: "1d",
         });
         console.log(token);
@@ -130,11 +129,10 @@ const generateAccessToken = (data) => {
 
 const generateRefreshToken = (data) => {
     try {
-        console.log('refreshtoken 1',token);
-        const token = jwt.sign(data, 'e91db63d5eb386f45e8711e0d37b2c248e5685d1a86ccaa00a377c39ee2c140fde900783dbe3c502674d256a14e9bd4d54816b4a099f99d5026a67493f5d3092', {
+        const token = jwt.sign(data, process.env.REFRESH_TOKEN_PRIVATE_KEY, {
             expiresIn: "1y",
         });
-        console.log('refreshtoken 2',token);
+        console.log(token);
         return token;
     } catch (error) {
         console.log(error);

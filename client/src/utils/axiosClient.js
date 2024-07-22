@@ -9,7 +9,9 @@ import store from '../redux/store';
 import { setLoading, showToast } from "../redux/slices/appConfigSlice";
 import { TOAST_FAILURE } from "../App";
 
-let baseURL = 'https://true-social.vercel.app/';
+// let baseURL = 'http://localhost:4000/';
+let baseURL = 'https://true-social-backend.onrender.com';
+// let baseURL = 'https://true-social.vercel.app/';
 // console.log('env is ', process.env.NODE_ENV);
 // if(process.env.NODE_ENV === 'production') {
 //     baseURL = 'https://true-social.vercel.app/'
@@ -62,9 +64,9 @@ axiosClient.interceptors.response.use(async (respone) => {
 
             return axios(originalRequest);
         } else {
-            // removeItem(KEY_ACCESS_TOKEN);
-            // window.location.replace("/login", "_self");
-            // return Promise.reject(error);
+            removeItem(KEY_ACCESS_TOKEN);
+            window.location.replace("/login", "_self");
+            return Promise.reject(error);
         }
     }
     return Promise.reject(error);
